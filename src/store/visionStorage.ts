@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand'
-import { immer } from 'zustand/middleware/immer'
 import { persist, createJSONStorage } from "zustand/middleware"
+import { immer } from 'zustand/middleware/immer'
 
 type State = {
   lifeVision: string | undefined

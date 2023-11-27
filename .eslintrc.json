@@ -1,0 +1,148 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "plugin:import/typescript",
+    "plugin:testing-library/react"
+  ],
+
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "react-native", "import", "testing-library"],
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  "rules": {
+    // general
+    "curly": "error",
+    "eol-last": 2,
+    "eqeqeq": ["error", "smart"],
+    "max-classes-per-file": 2,
+    "no-console": 2,
+    "no-duplicate-imports": "error",
+    "no-else-return": 2,
+    "no-multiple-empty-lines": 2,
+    "no-return-await": 2,
+    // conflicting with ts/no-shadow https://stackoverflow.com/a/63961972/6741159
+    "no-shadow": 0,
+    "no-trailing-spaces": 2,
+    "no-unneeded-ternary": 2,
+    "no-use-before-define": "error",
+    "prefer-template": 2,
+    "semi": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+        "pathGroups": [
+          {
+            "pattern": "{@appStrings/**,@components/**,@config/**,@constants/**,@customTypes/**,@generated,@hooks/**,@images/**,@nativeModules/**,@navigation/**,@screens/**,@store/**,@theme/**,@utils/**}",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+
+    // @typescript-eslint
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    // conflicting with no-shadow: https://stackoverflow.com/a/63961972/6741159
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-floating-promises": "error",
+
+    // react
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/display-name": "off",
+    "react/prop-types": "off",
+
+    // react native
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "react-native/no-raw-text": ["error", { "skip": ["Typography"] }],
+
+    // react hooks
+    "react-hooks/rules-of-hooks": 1,
+    "react-hooks/exhaustive-deps": 1
+  },
+
+  // Map from global var to bool specifying if it can be redefined
+  "globals": {
+    "__DEV__": true,
+    "__dirname": false,
+    "__fbBatchedBridgeConfig": false,
+    "AbortController": false,
+    "Blob": true,
+    "alert": false,
+    "cancelAnimationFrame": false,
+    "cancelIdleCallback": false,
+    "clearImmediate": true,
+    "clearInterval": false,
+    "clearTimeout": false,
+    "console": false,
+    "document": false,
+    "ErrorUtils": false,
+    "escape": false,
+    "Event": false,
+    "EventTarget": false,
+    "exports": false,
+    "fetch": false,
+    "File": true,
+    "FileReader": false,
+    "FormData": false,
+    "global": false,
+    "Headers": false,
+    "Intl": false,
+    "Map": true,
+    "module": false,
+    "navigator": false,
+    "process": false,
+    "Promise": true,
+    "requestAnimationFrame": true,
+    "requestIdleCallback": true,
+    "require": false,
+    "Set": true,
+    "setImmediate": true,
+    "setInterval": false,
+    "setTimeout": false,
+    "queueMicrotask": true,
+    "URL": false,
+    "URLSearchParams": false,
+    "WebSocket": true,
+    "window": false,
+    "XMLHttpRequest": false
+  }
+}

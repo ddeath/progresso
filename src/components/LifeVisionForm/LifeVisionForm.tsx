@@ -1,13 +1,12 @@
-import { Button, Text, TextInput } from "react-native"
-import { useVisionStore } from "../../store"
-import { useState } from "react"
 import * as Notifications from 'expo-notifications'
+import { useState } from "react"
+import { Button, Text, TextInput } from "react-native"
+
+import { useVisionStore } from "../../store"
 
 const sendLocalNotification = async () =>  {
   const title = "Vision clarity";
   const body = "Read your Vision in the morning to gain clarity for your day!";
-
-  console.log("Setting notification")
 
   return Notifications.scheduleNotificationAsync({
     content: {
@@ -59,8 +58,8 @@ export const LifeVisionForm = () => {
           setIsEditting(false)
 
           if (!notificationId) {
-            const notificationId = await sendLocalNotification()
-            updateMorningNotificationId(notificationId)
+            const id = await sendLocalNotification()
+            updateMorningNotificationId(id)
           }
         }} />
       </>
