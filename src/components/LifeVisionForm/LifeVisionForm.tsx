@@ -2,6 +2,7 @@ import * as Notifications from 'expo-notifications'
 import { useState } from 'react'
 import { Button, Text, TextInput } from 'react-native'
 
+import { styles } from './styles'
 import { useVisionStore } from '../../store'
 
 const sendLocalNotification = async () => {
@@ -54,7 +55,13 @@ export const LifeVisionForm = () => {
 
       {showForm && (
         <>
-          <TextInput value={lifeVisionDraft} onChangeText={updateLifeVisionDraft} />
+          <TextInput
+            value={lifeVisionDraft}
+            onChangeText={updateLifeVisionDraft}
+            editable={true}
+            multiline={true}
+            style={styles.visionTextInput}
+          />
           <Button
             title='Save'
             onPress={async () => {
