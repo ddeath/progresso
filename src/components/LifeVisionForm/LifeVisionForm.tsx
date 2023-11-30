@@ -1,9 +1,9 @@
+import { useVisionStore } from '@store'
 import * as Notifications from 'expo-notifications'
 import { useState } from 'react'
 import { Button, Text, TextInput } from 'react-native'
 
 import { styles } from './styles'
-import { useVisionStore } from '../../store'
 
 const sendLocalNotification = async () => {
   const title = 'Vision clarity'

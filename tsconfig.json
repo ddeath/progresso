@@ -1,6 +1,15 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "types": ["react-native", "node"],
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@store": ["src/store/index.ts"],
+      "@store/*": ["src/store/*"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"]
+    },
   }
 }

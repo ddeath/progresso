@@ -39,6 +39,9 @@
     },
     "updates": {
       "url": "https://u.expo.dev/a5abaca7-cf40-488c-8494-46574d5a56e9"
+    },
+    "experiments": {
+      "tsconfigPaths": true
     }
   }
 }

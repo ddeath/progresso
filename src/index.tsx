@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View } from 'react-native'
 
-import { LifeVisionForm } from './components/LifeVisionForm/LifeVisionForm'
+import { LifeVisionForm } from '@components/LifeVisionForm'
 
 const white = '#fff'
 const styles = StyleSheet.create({
