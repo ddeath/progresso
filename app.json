@@ -15,22 +15,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brumorg.progresso"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.brumorg.progresso"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "a32d4f10-081d-43b7-8cca-1c320eb41b20"
+        "projectId": "a5abaca7-cf40-488c-8494-46574d5a56e9"
       }
     },
-    "owner": "ddeath"
+    "owner": "brumorg",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a5abaca7-cf40-488c-8494-46574d5a56e9"
+    }
   }
 }
