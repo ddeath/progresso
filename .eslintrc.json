@@ -50,7 +50,7 @@
     "no-unneeded-ternary": 2,
     "no-use-before-define": "error",
     "prefer-template": 2,
-    "semi": 0,
+    "semi": ["error", "never"],
     "import/order": [
       "error",
       {

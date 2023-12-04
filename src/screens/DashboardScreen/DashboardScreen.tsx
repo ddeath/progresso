@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
   },
 })
 
-export const App = () => {
+export const DashboardScreen = () => {
   return (
     <View style={styles.container}>
       <LifeVisionForm />
-      <StatusBar style='auto' />
+      <StatusBar style="auto" />
     </View>
   )
 }

@@ -44,7 +44,7 @@ export const LifeVisionForm = () => {
         <>
           <Text>{lifeVision}</Text>
           <Button
-            title='Edit'
+            title="Edit"
             onPress={() => {
               updateLifeVisionDraft(lifeVision)
               setIsEditting(true)
@@ -63,7 +63,7 @@ export const LifeVisionForm = () => {
             style={styles.visionTextInput}
           />
           <Button
-            title='Save'
+            title="Save"
             onPress={async () => {
               updateLifeVision(lifeVisionDraft)
               updateLifeVisionDraft(undefined)

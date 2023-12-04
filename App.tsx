@@ -1,3 +1,16 @@
-import { App } from './src/index'
+import { NavigationContainer } from '@react-navigation/native'
+import { PaperProvider } from 'react-native-paper'
 
-export default App;
+import { Routes } from './src/routes'
+
+const App = () => {
+  return (
+    <PaperProvider>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </PaperProvider>
+  )
+}
+
+export default App
