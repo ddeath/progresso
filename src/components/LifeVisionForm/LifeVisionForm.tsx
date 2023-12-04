@@ -9,6 +9,15 @@ const sendLocalNotification = async () => {
   const title = 'Vision clarity'
   const body = 'Read your Vision in the morning to gain clarity for your day!'
 
+  const { status: existingStatus } = await Notifications.getPermissionsAsync()
+  if (existingStatus !== 'granted') {
+    const { status } = await Notifications.requestPermissionsAsync()
+    if (status !== 'granted') {
+      // Failed to get push token for push notification!
+      return
+    }
+  }
+
   return Notifications.scheduleNotificationAsync({
     content: {
       title: title,
@@ -27,6 +36,7 @@ const sendLocalNotification = async () => {
 
 export const LifeVisionForm = () => {
   const [isEditting, setIsEditting] = useState(false)
+  Notifications.usePermissions()
 
   const lifeVision = useVisionStore((state) => state.lifeVision)
   const lifeVisionDraft = useVisionStore((state) => state.lifeVisionDraft)
