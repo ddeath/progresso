@@ -9,7 +9,8 @@
       "@store": ["src/store/index.ts"],
       "@store/*": ["src/store/*"],
       "@components/*": ["src/components/*"],
-      "@components": ["src/components/index.ts"]
+      "@components": ["src/components/index.ts"],
+      "@screens/*": ["src/screens/*"]
     },
   }
 }

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const DashboardScreen = () => {
+export const LifeVisionScreen = () => {
   return (
     <View style={styles.container}>
       <LifeVisionForm />
