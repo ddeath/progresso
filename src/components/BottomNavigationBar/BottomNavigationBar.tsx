@@ -1,7 +1,9 @@
 import MaterialIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
-import { LifeVisionScreen } from 'src/screens/LifeVisionScreen/LifeVisionScreen'
+
+import { DaysFocusScreen } from '@screens/DaysFocusScreen/DaysFocusScreen'
+import { LifeVisionScreen } from '@screens/LifeVisionScreen/LifeVisionScreen'
 
 const Tab = createBottomTabNavigator()
 
@@ -17,7 +19,7 @@ export const BottomNavigationBar = () => {
       <Tab.Screen
         name="Day's Focus"
         options={{ tabBarIcon: () => <MaterialIcons name="target-account" size={20} /> }}
-        component={LifeVisionScreen}
+        component={DaysFocusScreen}
       />
     </Tab.Navigator>
   )
