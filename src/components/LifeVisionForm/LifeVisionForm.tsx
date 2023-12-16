@@ -10,11 +10,12 @@ const sendLocalNotification = async () => {
   const body = 'Read your Vision in the morning to gain clarity for your day!'
 
   const { status: existingStatus } = await Notifications.getPermissionsAsync()
+
   if (existingStatus !== 'granted') {
     const { status } = await Notifications.requestPermissionsAsync()
     if (status !== 'granted') {
       // Failed to get push token for push notification!
-      return
+      return null
     }
   }
 
@@ -81,7 +82,9 @@ export const LifeVisionForm = () => {
 
               if (!notificationId) {
                 const id = await sendLocalNotification()
-                updateMorningNotificationId(id)
+                if (id) {
+                  updateMorningNotificationId(id)
+                }
               }
             }}
           />
