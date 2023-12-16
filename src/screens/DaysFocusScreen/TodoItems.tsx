@@ -15,6 +15,7 @@ export const TodoItems = () => {
             label={task.label}
             status={task.checked ? 'checked' : 'unchecked'}
             position="leading"
+            mode="android"
             onPress={() =>
               createOrUpdate({
                 ...task,
