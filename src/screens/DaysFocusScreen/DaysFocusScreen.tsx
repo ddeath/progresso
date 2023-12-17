@@ -14,35 +14,37 @@ export const DaysFocusScreen = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <View style={styles.container}>
-      <Text>Today`s most important task for My Vision</Text>
-      {isEditing ? <EdittingForm /> : <ItemsList />}
-      {isEditing ? (
-        <FAB icon="check" style={styles.editButton} onPress={() => setIsEditing(!isEditing)} />
-      ) : (
-        <Portal>
-          <FAB.Group
-            open={isMenuOpen}
-            visible={true}
-            icon={isMenuOpen ? 'close' : 'menu'}
-            style={styles.optionsButton}
-            backdropColor="#ffffffaa"
-            actions={[
-              {
-                icon: 'check',
-                label: 'Finish day',
-                onPress: () => finishDay(),
-              },
-              {
-                icon: 'pencil-outline',
-                label: 'Edit',
-                onPress: () => setIsEditing(!isEditing),
-              },
-            ]}
-            onStateChange={({ open }) => setIsMenuOpen(open)}
-          />
-        </Portal>
-      )}
-    </View>
+    <Portal.Host>
+      <View style={styles.container}>
+        <Text>Today`s most important task for My Vision</Text>
+        {isEditing ? <EdittingForm /> : <ItemsList />}
+        {isEditing ? (
+          <FAB icon="check" style={styles.editButton} onPress={() => setIsEditing(!isEditing)} />
+        ) : (
+          <Portal>
+            <FAB.Group
+              open={isMenuOpen}
+              visible={true}
+              icon={isMenuOpen ? 'close' : 'menu'}
+              style={styles.optionsButton}
+              backdropColor="#ffffffaa"
+              actions={[
+                {
+                  icon: 'check',
+                  label: 'Finish day',
+                  onPress: () => finishDay(),
+                },
+                {
+                  icon: 'pencil-outline',
+                  label: 'Edit',
+                  onPress: () => setIsEditing(!isEditing),
+                },
+              ]}
+              onStateChange={({ open }) => setIsMenuOpen(open)}
+            />
+          </Portal>
+        )}
+      </View>
+    </Portal.Host>
   )
 }

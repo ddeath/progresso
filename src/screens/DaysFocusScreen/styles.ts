@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   optionsButton: {
-    bottom: 50,
+    bottom: 20,
   },
   editButton: {
     position: 'absolute',
