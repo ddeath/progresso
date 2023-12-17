@@ -2,9 +2,6 @@ import { StyleSheet } from 'react-native'
 
 const white = '#fff'
 export const styles = StyleSheet.create({
-  itemContainer: {
-    flexDirection: 'row',
-  },
   container: {
     flex: 1,
     backgroundColor: white,

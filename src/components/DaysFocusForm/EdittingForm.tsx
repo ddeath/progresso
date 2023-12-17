@@ -6,7 +6,8 @@ import { useDaysFocusStore } from '@store/daysFocusStore'
 
 import { styles } from './styles'
 
-export const TodoEdittingForm = () => {
+
+export const EdittingForm = () => {
   const { tasks, createOrUpdate, removeTask } = useDaysFocusStore()
 
   return (

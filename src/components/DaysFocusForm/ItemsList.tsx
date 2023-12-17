@@ -2,7 +2,7 @@ import { Checkbox } from 'react-native-paper'
 
 import { useDaysFocusStore } from '@store/daysFocusStore'
 
-export const TodoItems = () => {
+export const ItemsList = () => {
   const { tasks, createOrUpdate } = useDaysFocusStore()
 
   return (

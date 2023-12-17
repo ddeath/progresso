@@ -2,11 +2,10 @@ import { useState } from 'react'
 import { View } from 'react-native'
 import { FAB, Portal, Text } from 'react-native-paper'
 
+import { EdittingForm, ItemsList } from '@components/DaysFocusForm'
 import { useDaysFocusStore } from '@store/daysFocusStore'
 
 import { styles } from './styles'
-import { TodoEdittingForm } from './TodoEdittingForm'
-import { TodoItems } from './TodoItems'
 
 export const DaysFocusScreen = () => {
   const { finishDay } = useDaysFocusStore()
@@ -17,7 +16,7 @@ export const DaysFocusScreen = () => {
   return (
     <View style={styles.container}>
       <Text>Today`s most important task for My Vision</Text>
-      {isEditing ? <TodoEdittingForm /> : <TodoItems />}
+      {isEditing ? <EdittingForm /> : <ItemsList />}
       {isEditing ? (
         <FAB icon="check" style={styles.editButton} onPress={() => setIsEditing(!isEditing)} />
       ) : (
