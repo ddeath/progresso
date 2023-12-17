@@ -1,7 +1,8 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 import { immer } from 'zustand/middleware/immer'
+
+import { getStorage } from './storage'
 
 type State = {
   lifeVision: string | undefined
@@ -36,8 +37,8 @@ export const useVisionStore = create<State & Actions>()(
     })),
     {
       name: 'progresso-life-vision-storage',
-      storage: createJSONStorage(() => AsyncStorage),
-      version: 0,
+      storage: getStorage<State>(),
+      version: 2,
     },
   ),
 )
