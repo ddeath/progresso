@@ -4,6 +4,7 @@ import React from 'react'
 
 import { DaysFocusScreen } from '@screens/DaysFocusScreen/DaysFocusScreen'
 import { LifeVisionScreen } from '@screens/LifeVisionScreen/LifeVisionScreen'
+import { NotificationsScreen } from '@screens/NotificationsScreen/NotificationsScreen'
 
 const Tab = createBottomTabNavigator()
 
@@ -20,6 +21,12 @@ export const BottomNavigationBar = () => {
         name="Day's Focus"
         options={{ tabBarIcon: () => <MaterialIcons name="target-account" size={20} /> }}
         component={DaysFocusScreen}
+      />
+
+      <Tab.Screen
+        name="Notifications"
+        options={{ tabBarIcon: () => <MaterialIcons name="bell-ring-outline" size={20} /> }}
+        component={NotificationsScreen}
       />
     </Tab.Navigator>
   )
